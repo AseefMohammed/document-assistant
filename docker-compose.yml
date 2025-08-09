@@ -1,0 +1,49 @@
+# Docker Compose for Fintech Document Assistant
+# Includes Ollama service for local LLM deployment
+
+version: '3.8'
+
+services:
+  # Ollama service for local LLM
+  ollama:
+    image: ollama/ollama:latest
+    container_name: fintech_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    restart: unless-stopped
+    networks:
+      - fintech_network
+
+  # Document Assistant service
+  document_assistant:
+    build: .
+    container_name: fintech_doc_assistant
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - LLM_MODEL_NAME=mistral:7b
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - VECTOR_STORE_PATH=/app/data/vector_store
+      - DOCUMENTS_PATH=/app/data/documents
+      - LOG_FILE=/app/logs/app.log
+    depends_on:
+      - ollama
+    restart: unless-stopped
+    networks:
+      - fintech_network
+
+volumes:
+  ollama_data:
+    driver: local
+
+networks:
+  fintech_network:
+    driver: bridge

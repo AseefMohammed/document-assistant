@@ -1,0 +1,46 @@
+# Core ML and AI libraries
+torch>=2.0.0
+transformers>=4.30.0
+sentence-transformers>=2.2.2
+langchain>=0.1.0
+langchain-community>=0.0.10
+
+# Vector database and search
+faiss-cpu>=1.7.4
+numpy>=1.24.0
+
+# Document processing
+PyPDF2>=3.0.1
+python-docx>=0.8.11
+python-multipart>=0.0.6
+
+# Web framework and API
+fastapi>=0.100.0
+uvicorn>=0.22.0
+pydantic>=2.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+loguru>=0.7.0
+tqdm>=4.65.0
+
+# Optional: Ollama integration for local LLM
+ollama>=0.1.0
+requests>=2.31.0
+
+# MCP (Model Context Protocol) for advanced server capabilities
+model-context-protocol>=0.5.0
+
+# Flask for web interface (alternative to FastAPI)
+flask>=2.3.0
+flask-cors>=4.0.0
+
+# Development and testing
+pytest>=7.4.0
+black>=23.7.0
+flake8>=6.0.0
+mypy>=1.5.0
+
+# Documentation
+mkdocs>=1.5.0
+mkdocs-material>=9.0.0
