@@ -1,16 +1,25 @@
 # Document Assistant
 
-> **Sophisticated AI-powered document analysis with a clean, modern interface**
+> **AI-powered document assistant with MCP Server integration**
 
-A minimalist yet powerful document assistant that combines cutting-edge AI with elegant design. Built for professionals who value both functionality and aesthetics.
+A sophisticated document analysis system that combines cutting-edge AI with modern architecture. Built for financial compliance analysis with CBUAE standards processing capabilities.
 
 ## ✨ Features
 
-- **Clean Interface**: Grok-inspired black & off-white design
+- **MCP Server**: High-performance Model Context Protocol server
+- **Flask Frontend**: Grok-inspired black & off-white design  
 - **Smart Analysis**: AI-powered document understanding and retrieval
-- **Real-time Chat**: Interactive conversation with your documents
-- **Source Citations**: Transparent references to original content
-- **Responsive Design**: Works seamlessly across all devices
+- **Real-time Processing**: Interactive conversation with your documents
+- **Intelligent Caching**: Performance-optimized query processing
+- **Docker Support**: Containerized deployment ready
+
+## 🏗️ Architecture
+
+- **MCP Server**: Production-ready with comprehensive tool handlers
+- **BGE Embeddings**: BAAI/bge-small-en for semantic search
+- **FAISS Vector Store**: Lightning-fast similarity search
+- **Phi-3 LLM**: Microsoft Phi-3 via Ollama integration
+- **Async Processing**: High-performance asynchronous architecture
 
 ## 🚀 Quick Start
 
@@ -22,7 +31,8 @@ A minimalist yet powerful document assistant that combines cutting-edge AI with 
 
 ```bash
 # Clone and enter directory
-cd Doc_Assistant
+git clone https://github.com/aseefmohammed/document-assistant.git
+cd document-assistant
 
 # Create virtual environment
 python -m venv venv
@@ -125,4 +135,4 @@ gunicorn -w 4 -k uvicorn.workers.UvicornWorker api:app
 
 ---
 
-*Built for the modern professional who demands both power and elegance.*
+*Built for modern financial compliance analysis with enterprise-grade performance.*
